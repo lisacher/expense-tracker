@@ -1,0 +1,41 @@
+<div class="container h-100 mb-5">
+  <div class="row justify-content-center align-items-center">
+    <form action="/records" method="post" class="col-4 px-5 py-5 border border-secondary detail-container" id="submit-form" novalidate onsubmit="return submitForm(event)">
+      <div class="form-group text-center mb-3">
+        <h2 class="title" style="letter-spacing: 1rem;">新增記錄</h2>
+      </div>
+      <small for="title" style="color: red;">*必填欄位</small>
+      <div class="form-group mt-2">
+        <label for="name">名稱 *</label>
+        <input type="text" name="name" class="form-control" id="name" value="{{record.name}}" required>
+      </div>
+      <div class="form-group">
+        <label for="date">日期 *</label>
+        <input type="date" name="date" class="form-control" id="date" value="{{record.date}}" required>
+      </div>
+      <div class="form-group">
+        <label for="category">類別 *</label>
+        <select name="category" class="form-control" id="category" required>
+          <option value="" disabled selected hidden> -- Select here -- </option>
+          <option value="家居物業" {{ifEquals record.category '家居物業' }}>家居物業</option>
+          <option value="交通出行" {{ifEquals record.category '交通出行' }}>交通出行</option>
+          <option value="休閒娛樂" {{ifEquals record.category '休閒娛樂' }}>休閒娛樂</option>
+          <option value="餐飲食品" {{ifEquals record.category '餐飲食品' }}>餐飲食品</option>
+          <option value="其他" {{ifEquals record.category '其他' }}>其他</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amount">金額 *</label>
+        <input type="number" name="amount" class="form-control" min="1" id="amount" value="{{record.amount}}" required>
+      </div>
+
+      <button class="btn btn-success w-100 mt-4" type="submit" id="submit" onclick="return clickSubmit()" style="letter-spacing: 2px;">Add</button>
+
+      {{#each errors}}
+        <div class="alert alert-danger text-center form-group mt-3" role="alert" style="letter-spacing: 1px;">
+          {{this.msg}}
+        </div>
+      {{/each}}
+    </form>
+  </div>
+</div>

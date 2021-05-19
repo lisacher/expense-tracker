@@ -1,158 +1,64 @@
-header {
-  overflow: hidden;
+@font-face {
+  font-family: 'San Francisco';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff)
+    format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-.navbar .navbar-brand {
-  color: #1f7796;
+html,
+body {
+  background: #c8deff;
+  font-family: 'San Francisco', Lato, sans-serif;
+  overflow: auto;
+  height: 100vh;
+  width: 100%;
+}
+.container {
+  margin-top: 100px;
+}
+/* .detail-container,
+.index-container {
+  /* background: rgba(244, 237, 237, 0.4); */
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); */
+/* } */ 
+.detail-container,
+#expense-box {
+  min-width: 500px;
+}
+.fa-edit:hover {
+  color: #3e79dd;
 }
 
-.navbar .navbar-brand:hover {
-  color: #226089;
+.fa-trash-alt:hover {
+  color: #cc2222;
 }
 
-.banner {
-  position: relative;
-  z-index: -1;
-  margin: -5px;
-  height: 360px;
-  background: #dddddd center center
-    url("https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg");
-  background-size: cover;
-  filter: blur(3px);
+.fa-grin-beam {
+  color: #9351c0;
 }
-
-.search-bar .search-bar-outer {
-  margin: 0 auto;
-  max-width: 680px;
-  background-color: #fce2cf;
-  border-radius: 8px;
-  padding: 20px 30px;
-  border: 0;
-  margin-top: -60px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+.fa-utensils {
+  color: orange;
 }
-
-.search-bar .search-bar-inner h4 {
-  color: #9b4b4b;
+.fa-home {
+  color: #70a93c;
 }
-
-.form-control::placeholder {
-  color: #aaaaaa;
-  font-size: 0.8rem;
+.fa-shuttle-van {
+  color: #5186c2;
 }
-
-.btn-major {
-  background-color: #9b4b4b;
-  color: white;
+.fa-pen {
+  color: gray;
 }
-
-.form-control:focus {
-  box-shadow: none;
-  border-color: #ced4da;
+#add-button {
+  color: #666;
 }
-
-.card {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+#add-button:hover {
+  color: black;
 }
-
-.card img {
-  height: 180px;
+#expense-box {
+  height: 53vh;
+  overflow-y: auto;
 }
-
-.card-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-/* .card-columns{
-  display: flex;
-  flex-wrap: wrap;
-} */
-.restaurant-category {
-  color: #666666;
-  font-size: 0.8rem;
-}
-.fa-plus-circle {
-  font-size: 25px;
-  color: #aaaaaa;
-}
-
-.fa-plus-circle:hover {
-  color: #666666;
-}
-
-.add-btn {
-  color: #666666;
-}
-.add-btn:hover {
-  color: #212529;
-}
-
-.restaurant-price {
-  color: #666666;
-  font-size: 0.8rem;
-}
-
-.quick-link {
-  border-radius: 10px;
-  margin: 10px;
-}
-.restaurant-url {
-  color: #fff;
-  margin-right: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fce9d8;
-}
-.restaurant-url:hover {
-  color: #212529;
-  background-color: #e8c9b7;
-}
-.restaurant-phone {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  background-color: aliceblue;
-}
-.restaurant-phone:hover {
-  color: #212529;
-  background-color: #c6d3e1;
-}
-
-
-.restaurant-show-title {
-  position: relative;
-  top: -100px;
-  color: white;
-  text-align: center;
-  font-size: 3rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (max-width: 992px) {
-  .card img {
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .restaurant-show-title {
-    font-size: 2rem;
-  }
-  .addnew {
-    font-size: small;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .card img {
-    height: auto;
-  }
-  .addnew {
-    font-size: small;
-  }
-  #dropdownMenu2 {
-    font-size: small;
-    padding: 5px;
-  }
-  .banner {
-    height: 260px;
-  }
+.item-list {
+  background: rgba(250, 247, 247, 0.6);
 }
