@@ -1,0 +1,77 @@
+<div class="row container position-relative mb-5 mx-auto">
+  <div class="index-container py-2 col-6 mx-auto border border-secondary">
+    <div class="col-12 mt-5 d-flex justify-content-center">
+      <div class="d-flex flex-column align-items-center mr-5">
+        <small>總額</small>
+        <p>TWD</p>
+      </div>
+      <div class=" text-center">
+        <h1 style="color: tomato;">{{toMoney totalAmount.amount}}</h1>
+      </div>
+    </div>
+
+    <div class="col-12 d-flex justify-content-around">
+      <div class="select-container mt-4 row col-6">
+        <form action="/records/filter" class="w-100">
+          <div class="form-group d-flex align-items-center">
+            <i class="fas fa-calendar-minus mr-2"></i>
+            <select name="month" class="form-control" id="month" {{#if category}}disabled{{/if}} onchange="this.form.submit()">
+              <option value="" disabled selected hidden> {{#if selectedMonth}}{{selectedMonth}}{{else}}Filter by month{{/if}}</option>
+              {{#each months}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <div class="select-container mt-4 row col-6">
+        <form action="/records/filter" class="w-100">
+          <div class="form-group d-flex align-items-center">
+            <i class="fas fa-filter mr-2"></i >
+            <select name="category" class="form-control" id="category" {{#if selectedMonth}}disabled{{/if}} onchange="this.form.submit()">
+              <option value="" disabled selected hidden>Filter by category</option>
+              <option value="家居物業" {{ifEquals category '家居物業' }}>家居物業</option>
+              <option value="交通出行" {{ifEquals category '交通出行' }}>交通出行</option>
+              <option value="休閒娛樂" {{ifEquals category '休閒娛樂' }}>休閒娛樂</option>
+              <option value="餐飲食品" {{ifEquals category '餐飲食品' }}>餐飲食品</option>
+              <option value="其他" {{ifEquals category '其他' }}>其他</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-12 mb-5 row mx-auto" id="expense-box">
+      <ul class="list-group col-12 px-3 mt-1 mb-5 list-group-flush" >
+        {{#each record}}
+          <li class="list-group-item row d-flex justify-content-between align-items-center pl-2 pt-3 item-list" style="border-radius: 12px;">
+            <div class="col-11 d-flex justify-content-between align-items-center text-decoration-none">
+              <div class="list-front d-flex align-items-center">
+                <div class="mr-4">
+                  <i class="{{this.icon}} fa-2x fa-fw"></i>
+                </div>
+                <div class="list-description">
+                  <h5 style="color: #3a3a3a;">{{this.name}}</h5>
+                  <small class="text-muted">{{this.date}}</small>
+                </div>
+              </div>
+              <h3 class="pr-2 text-success">${{toMoney this.amount}}</h3>
+            </div>
+            <div class="col-1 button-container d-flex flex-column align-items-center">
+              <a class="icon text-muted ml-1" id="edit" href="/records/{{this._id}}/edit">
+                <i class="fas fa-edit"></i>
+              </a>
+              <form action="/records/{{this._id}}?_method=DELETE" method="post"
+                onsubmit="return deleteAlert()">
+                <button type="submit" class="text-muted" style="border: none; background:none;">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </form>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
