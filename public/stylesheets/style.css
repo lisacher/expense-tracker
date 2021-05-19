@@ -8,7 +8,7 @@
 
 html,
 body {
-  background: #c8deff;
+  background: #dedede97;
   font-family: 'San Francisco', Lato, sans-serif;
   overflow: auto;
   height: 100vh;
@@ -17,14 +17,37 @@ body {
 .container {
   margin-top: 100px;
 }
-/* .detail-container,
-.index-container {
-  /* background: rgba(244, 237, 237, 0.4); */
-  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); */
-/* } */ 
+.total-box {
+  background: rgba(256, 256, 256, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
 .detail-container,
 #expense-box {
   min-width: 500px;
+  background: rgba(256, 256, 256, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-item {
+  background: rgba(256, 256, 256, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-edit {
+  background: rgba(256, 256, 256, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn {
+  font-size: medium;
+  color: rgb(255, 255, 255);
+  background: rgba(11, 31, 48, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 .fa-edit:hover {
   color: #3e79dd;
@@ -35,30 +58,41 @@ body {
 }
 
 .fa-grin-beam {
-  color: #9351c0;
+  color: #d3d06f;
 }
 .fa-utensils {
-  color: orange;
+  color: rgb(41, 39, 41);
 }
 .fa-home {
-  color: #70a93c;
+  color: #b194da;
 }
 .fa-shuttle-van {
-  color: #5186c2;
+  color: #45ae80;
 }
 .fa-pen {
-  color: gray;
+  color: rgb(230, 150, 116);
 }
 #add-button {
   color: #666;
+  font-size: medium;
+  background: rgba(255, 240, 214, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 #add-button:hover {
-  color: black;
+  color: rgb(203, 76, 76);
 }
 #expense-box {
   height: 53vh;
   overflow-y: auto;
 }
+
+.btn-submit {
+  background: rgba(8, 33, 96, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
 .item-list {
   background: rgba(250, 247, 247, 0.6);
 }

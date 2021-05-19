@@ -1,9 +1,12 @@
-<div class="container h-100 mb-5">
-  <h2 class="title my-5 text-center" style="letter-spacing: 1rem;">修改記錄</h2>
+<div class="h-100 mb-5">
   <div class="row justify-content-center align-items-center">
-    <form action="/records/{{record._id}}/edit?_method=PUT" method="post" class="col-4 px-5 py-5 border border-secondary detail-container"
+    <form action="/records/{{record._id}}/edit?_method=PUT" method="post" class="col-4 px-5 py-5 mt-4 detail-container"
       id="submit-form" novalidate onsubmit="return submitForm(event)">
-      <div class="form-group">
+      <div class="form-group ">
+         <div class=" d-flex align-items-center">
+          <h3 class="col-10 d-flex justify-content-center ">修改支出</h3>
+          <a href="/" class="text-decoration-none text-center col-1"><i class="fas fa-undo-alt"> Back</i></a> 
+        </div> 
         <label for="name">名稱 *</label>
         <input type="text" name="name" class="form-control" id="name" value="{{record.name}}" required>
       </div>
@@ -27,7 +30,7 @@
         <input type="number" name="amount" class="form-control" min="1" id="amount" value="{{record.amount}}" required>
       </div>
 
-      <button class="btn btn-success w-100 mt-4" type="submit" id="submit" onclick="return clickSubmit()"
+      <button class="btn btn-submit w-100 mt-4" type="submit" id="submit" onclick="return clickSubmit()"
         style="letter-spacing: 2px;">Save</button>
     </form>
   </div>

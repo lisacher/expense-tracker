@@ -1,15 +1,18 @@
-<div class="row container position-relative mb-5 mx-auto">
-  <div class="index-container py-2 col-6 mx-auto">
-    <div class="col-12 mt-5 d-flex justify-content-center">
-      <div class="d-flex flex-column align-items-center mr-5">
-        <small>總額</small>
-        <p>TWD</p>
-      </div>
-      <div class=" text-center">
-        <h1 style="color: tomato;">{{toMoney totalAmount.amount}}</h1>
+<div class="row position-relative mb-5 mx-auto">
+  <div class="index-container col-sm-6 mx-auto">
+    <div class="mt-4 d-flex align-items-center">
+      <h3 class="col-10 d-flex justify-content-center "><i class="fas fa-book"> 我的記帳小本本</i> </h3>
+      <a href="/records/create" class="text-decoration-none text-center col-1 mr-2" id="add-button"><i class="fas fa-plus-circle"></i></a>
+      <a href="/" class="back-btn text-decoration-none text-center col-1"><i class="fas fa-undo-alt"></i></a> 
+    </div>
+    <div class="total-box mt-3 p-1">
+      <div class="col-12 text-center align-items-center">
+        <small>總共花費</small>
+        <div class="">
+        <h3 style="color: rgb(198, 46, 19);">$ {{toMoney totalAmount.amount}}</h3>
+        </div>
       </div>
     </div>
-
     <div class="col-12 d-flex justify-content-around">
       <div class="select-container mt-4 row col-6">
         <form action="/records/filter" class="w-100">
@@ -41,37 +44,30 @@
         </form>
       </div>
     </div>
-
-    <div class="col-12 mb-5 row mx-auto" id="expense-box">
-      <ul class="list-group col-12 px-3 mt-1 mb-5 list-group-flush" >
         {{#each record}}
-          <li class="list-group-item row d-flex justify-content-between align-items-center pl-2 pt-3 item-list" style="border-radius: 12px;">
-            <div class="col-11 d-flex justify-content-between align-items-center text-decoration-none">
-              <div class="list-front d-flex align-items-center">
-                <div class="mr-4">
+          <div class="row m-1 list-item">
+            <div class="col-2  d-flex align-items-center">
                   <i class="{{this.icon}} fa-2x fa-fw"></i>
-                </div>
-                <div class="list-description">
-                  <h5 style="color: #3a3a3a;">{{this.name}}</h5>
-                  <small class="text-muted">{{this.date}}</small>
-                </div>
-              </div>
-              <h3 class="pr-2 text-success">${{toMoney this.amount}}</h3>
             </div>
-            <div class="col-1 button-container d-flex flex-column align-items-center">
-              <a class="icon text-muted ml-1" id="edit" href="/records/{{this._id}}/edit">
-                <i class="fas fa-edit"></i>
-              </a>
-              <form action="/records/{{this._id}}?_method=DELETE" method="post"
-                onsubmit="return deleteAlert()">
-                <button type="submit" class="text-muted" style="border: none; background:none;">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </form>
+            <div class="col-4">
+                <h5 class="pt-2 " style="color: #3a3a3a;">{{this.name}}</h5>
+                <small class="text-muted">{{this.date}}</small>
             </div>
-          </li>
+            <div class="col-3 pt-3">
+              <h3 >${{toMoney this.amount}}</h3>
+            </div>
+            <div class="col-3 pt-2 d-flex flex-column align-items-center">
+                <a class="icon text-muted ml-1" id="edit" href="/records/{{this._id}}/edit">
+                  <i class="fas fa-edit"></i>
+                </a>
+                <form action="/records/{{this._id}}?_method=DELETE" method="post"
+                  onsubmit="return deleteAlert()">
+                  <button type="submit" class="text-muted" style="border: none; background:none;">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </form>
+            </div>
+          </div>  
         {{/each}}
-      </ul>
-    </div>
   </div>
 </div>

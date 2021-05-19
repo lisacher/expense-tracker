@@ -17,12 +17,20 @@
   <body>
     <header>
       <!-- navigation -->
-      <nav class="navbar navbar-light bg-light fixed-top">
-        <a class="navbar-brand ml-3" href="/">Expense Tracker</a>
-        <div class="button mr-3">
-          <a href="/records/create" class="text-decoration-none p-2" id="add-button"><i class="fas fa-plus-circle mr-2"></i>Add</a>
-        </div>
-      </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">黛西的手帳本</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a href="/records/create" class="text-decoration-none p-2" id="add-button"><i class="fas fa-plus-circle "></i> 新增支出項目</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     </header>
     {{{body}}}
       
